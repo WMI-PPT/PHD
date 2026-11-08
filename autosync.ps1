@@ -30,6 +30,16 @@ param(
 # rely on $LASTEXITCODE instead.
 $ErrorActionPreference = "Continue"
 
+# Make sure git is reachable even when Task Scheduler starts us with a bare PATH.
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    foreach ($candidate in @("D:\MinGit\cmd", "$env:ProgramFiles\Git\cmd")) {
+        if (Test-Path (Join-Path $candidate "git.exe")) {
+            $env:PATH = "$candidate;$env:PATH"
+            break
+        }
+    }
+}
+
 # Keep the log OUTSIDE the repository, otherwise it would itself be a change
 # and every run would produce an empty commit.
 $logDir = Join-Path $env:LOCALAPPDATA "autosync"
