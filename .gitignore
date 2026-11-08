@@ -1,0 +1,85 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------- 虚拟环境 ----------
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.egg
+
+# ---------- IDE ----------
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 日志与临时文件 ----------
+*.log
+.autosync.log
+tmp/
+temp/
+*.tmp
+
+# ---------- 数据（医学影像）----------
+data/
+datasets/
+dataset/
+raw/
+images/
+labels/
+masks/
+*.nii
+*.nii.gz
+*.nrrd
+*.mha
+*.mhd
+*.dcm
+*.dicom
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# ---------- 模型权重与训练产物 ----------
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+checkpoints/
+runs/
+outputs/
+wandb/
+lightning_logs/
+tensorboard/
+
+# ---------- 敏感信息 ----------
+.env
+.env.*
+secrets.json
+*.pem
+*.key
+
+# ---------- 说明 ----------
+# 如果你的小模型（<10MB）确实需要入库，
+# 用 "git add -f 文件名" 强制添加，或把上面 *.pth 那行删掉。
